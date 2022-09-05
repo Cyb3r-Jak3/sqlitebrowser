@@ -1,0 +1,32 @@
+name: Build Windows
+
+on:
+  push:
+    branches: ['*']
+    tags:
+    paths_ignore: ['docs/**']
+  pull_request:
+    branches: ['*']
+  release:
+    types: ['created']
+
+default:
+
+jobs:
+  use_script:
+    runs-on: "windows-latest"
+    steps:
+      - name: Run script
+        run: cmd sqlitebrowser/installer/windows/nightly_build_scripts/win64build.bat
+
+  # build:
+  #   name: ${{ matrix.os }} - SQLCipher ${{ matrix.sqlcipher }}
+  #   runs-on: ${{ matrix.os }}
+  #   strategy:
+  #     fail-fast: true
+  #     matrix:
+  #       os: [windows-2022]
+  #       sqlcipher: ["0", "1"]
+
+  #   steps:
+  #     - name: Prep
