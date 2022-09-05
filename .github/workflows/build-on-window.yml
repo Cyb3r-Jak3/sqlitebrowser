@@ -15,8 +15,10 @@ jobs:
   use_script:
     runs-on: "windows-latest"
     steps:
+      - name: Debug
+        run: tree
       - name: Run script
-        run: .\sqlitebrowser\installer\windows\nightly_build_scripts\win64build.bat
+        run: .\installer\windows\nightly_build_scripts\win64build.bat
 
   # build:
   #   name: ${{ matrix.os }} - SQLCipher ${{ matrix.sqlcipher }}
