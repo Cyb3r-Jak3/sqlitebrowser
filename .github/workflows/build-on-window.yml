@@ -15,6 +15,8 @@ jobs:
   use_script:
     runs-on: "windows-latest"
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Debug
         run: tree
       - name: Run script
