@@ -10,7 +10,6 @@ on:
   release:
     types: ['created']
 
-default:
 
 jobs:
   use_script:
